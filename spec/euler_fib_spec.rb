@@ -23,7 +23,7 @@ class EvenSummator
   end
   
   def sum
-    EvenPicker.new(@sequence_generator)
+    Summator.new(EvenPicker.new(@sequence_generator))
   end
 end
 
