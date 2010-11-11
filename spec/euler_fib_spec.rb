@@ -43,6 +43,12 @@ describe Summator do
 end
 
 describe EvenFibSummator do
+  it "works" do
+    EvenFibSummator.new(35).sum.should eq 44
+  end
+end
+
+describe EvenFibSummator do
   let(:summator) { mock(Summator, sum: 1) }
   let(:even_picker) { mock(EvenPicker) }
   let(:fib_sequence_generator) { mock(FibSequenceGenerator) }
@@ -72,11 +78,5 @@ describe EvenFibSummator do
   it "asks the Summator for the sum" do
     summator.should_receive(:sum)
     even_fib_summator.sum.should eq 1
-  end
-  
-  describe "integration" do
-    it "works" do
-      EvenFibSummator.new(35).sum.should eq 44
-    end
-  end
+  end  
 end
