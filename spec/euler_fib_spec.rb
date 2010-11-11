@@ -42,8 +42,17 @@ describe EvenSummator do
   let(:even_picker) { mock(EvenPicker) }
   let(:even_summator) { EvenSummator.new(sequence_generator) }
   
+  before(:each) do
+    # EvenPicker.
+  end
+  
   specify "sum" do
     EvenPicker.should_receive(:new).with(sequence_generator)
+    even_summator.sum
+  end
+  
+  specify "sum" do
+    Summator.should_receive(:new).with(even_picker)
     even_summator.sum
   end
 end
