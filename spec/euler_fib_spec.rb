@@ -9,7 +9,7 @@ class Summator
   end
   
   def sum
-    sequence_generator.sequence.inject(:+)
+    @sequence_generator.sequence.inject(:+)
   end
 end
 
