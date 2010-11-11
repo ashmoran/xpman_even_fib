@@ -27,8 +27,8 @@ class EvenSummator
   end
 end
 
-describe "even fib sum" do
-  let(:sequence_generator) { mock("sequence_generator", sequence: [1,2,3]) }
+describe Summator do
+  let(:sequence_generator) { mock("SequenceGenerator", sequence: [1,2,3]) }
   
   let(:summator) { Summator.new(sequence_generator) }
   
@@ -37,8 +37,18 @@ describe "even fib sum" do
   end
 end
 
+describe EvenPicker do
+  let(:sequence_generator) { mock("SequenceGenerator", sequence: [1,2,3,4,5,6,7,8,9]) }
+  
+  let(:even_picker) { EvenPicker.new(sequence_generator) }
+  
+  it "is a SequenceGenerator" do
+    even_picker.sequence.should eq [2,4,6,8]
+  end
+end
+
 describe EvenSummator do
-  let(:sequence_generator) { mock("sequence_generator") }
+  let(:sequence_generator) { mock("SequenceGenerator") }
   let(:even_picker) { mock(EvenPicker) }
   let(:even_summator) { EvenSummator.new(sequence_generator) }
   
