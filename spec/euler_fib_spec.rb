@@ -19,7 +19,7 @@ class EvenPicker
   end
   
   def sequence
-    @sequence_generator.sequence.select(:even?)
+    @sequence_generator.sequence.select(&:even?)
   end
 end
 
