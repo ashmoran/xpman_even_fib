@@ -23,7 +23,7 @@ class EvenSummator
   end
   
   def sum
-    
+    EvenPicker.new
   end
 end
 
