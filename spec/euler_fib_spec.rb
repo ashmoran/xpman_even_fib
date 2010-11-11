@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'euler_fib'
 
-class FibSequenceGenerator
+class EvenPicker
   
 end
 
