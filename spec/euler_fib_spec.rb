@@ -11,7 +11,7 @@ class Summator
   end
   
   def sum
-    sequence_generator.sequence.inject(:+)
+    @sequence_generator.sequence.inject(:+)
   end
 end
 
@@ -42,7 +42,7 @@ describe EvenFibSummator do
   let(:summator) { mock(Summator, sum: 1) }
   let(:even_picker) { mock(EvenPicker) }
   let(:fib_sequence_generator) { mock(FibSequenceGenerator) }
-  let(:even_fib_summator) { EvenFibSummator.new }
+  let(:even_fib_summator) { EvenFibSummator.new(2) }
   
   before(:each) {
     FibSequenceGenerator.stub(new: fib_sequence_generator)
@@ -51,7 +51,7 @@ describe EvenFibSummator do
   }
 
   it "creates a FibSequenceGenerator" do
-    FibSequenceGenerator.should_receive(:new)
+    FibSequenceGenerator.should_receive(:new).with(2)
     even_fib_summator.sum
   end
   
