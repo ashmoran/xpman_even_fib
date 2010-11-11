@@ -24,8 +24,12 @@ class FibSequenceGenerator
 end
 
 class EvenFibSummator
+  def initialize(limit)
+    @limit = limit
+  end
+  
   def sum
-    Summator.new(EvenPicker.new(FibSequenceGenerator.new)).sum
+    Summator.new(EvenPicker.new(FibSequenceGenerator.new(limit))).sum
   end
 end
 
