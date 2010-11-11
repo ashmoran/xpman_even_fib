@@ -16,7 +16,13 @@ class Summator
 end
 
 class EvenPicker
+  def initialize(sequence_generator)
+    @sequence_generator = sequence_generator
+  end
   
+  def sequence
+    @sequence_generator.sequence.select(&:even?)
+  end
 end
 
 class FibSequenceGenerator
