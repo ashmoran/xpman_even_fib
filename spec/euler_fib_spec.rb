@@ -18,6 +18,8 @@ end
 describe EvenFibSummator do
   let(:fib_sequence_generator) { mock(FibSequenceGenerator) }
   let(:even_fib_summator) { EvenFibSummator.new }
+  
+  before(:each) { FibSequenceGenerator.stub(new: fib_sequence_generator) }
 
   it "creates a FibSequenceGenerator" do
     FibSequenceGenerator.should_receive(:new)
