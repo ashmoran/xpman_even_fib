@@ -44,7 +44,7 @@ describe EvenSummator do
   let(:even_summator) { EvenSummator.new(sequence_generator) }
   
   describe "sum" do
-    EvenPicker.should_receive(:new).with(sequence_generator)
+    "EvenPicker".should_receive(:new).with(sequence_generator)
     even_summator.sum
   end
 end
