@@ -1,6 +1,8 @@
 require 'spec_helper'
 require 'euler_fib'
 
+# 1 1 2 3 5 8 13 21 34 55 89 
+
 class Summator
   
 end
@@ -58,5 +60,9 @@ describe EvenFibSummator do
   it "asks the Summator for the sum" do
     summator.should_receive(:sum)
     even_fib_summator.sum.should eq 1
+  end
+  
+  describe "integration" do
+    EvenFibSummator.new(35).sum.should eq 44
   end
 end
