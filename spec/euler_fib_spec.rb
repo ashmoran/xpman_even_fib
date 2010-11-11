@@ -1,3 +1,5 @@
+# NOTE: The mocked version since we started again was with Paul Shannon
+
 require 'spec_helper'
 require 'euler_fib'
 
