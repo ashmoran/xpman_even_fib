@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'rspec/mocks'
 require 'euler_fib'
 
 # 1 1 2 3 5 8 13 21 34 55 89 144 233 377
@@ -43,8 +42,8 @@ describe EvenSummator do
   let(:even_picker) { mock(EvenPicker) }
   let(:even_summator) { EvenSummator.new(sequence_generator) }
   
-  describe "sum" do
-    "EvenPicker".should_receive(:new).with(sequence_generator)
+  specify "sum" do
+    EvenPicker.should_receive(:new).with(sequence_generator)
     even_summator.sum
   end
 end
