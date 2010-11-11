@@ -8,7 +8,6 @@ def even_fib_sum(n)
 end
 
 describe "euler_fib" do
-  it "does something" do
-    even_fib_sum(1).should eq 0
-  end
+  specify { even_fib_sum(1).should eq 0 }
+  specify { even_fib_sum(2).should eq 0 }
 end
