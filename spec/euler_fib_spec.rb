@@ -29,7 +29,7 @@ class EvenFibSummator
   end
   
   def sum
-    Summator.new(EvenPicker.new(FibSequenceGenerator.new(limit))).sum
+    Summator.new(EvenPicker.new(FibSequenceGenerator.new(@limit))).sum
   end
 end
 
