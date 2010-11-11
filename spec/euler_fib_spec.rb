@@ -13,6 +13,10 @@ class Summator
   end
 end
 
+class EvenPicker
+  
+end
+
 class EvenSummator
   def initialize(sequence_generator)
     @sequence_generator = sequence_generator
@@ -35,7 +39,7 @@ end
 
 describe EvenSummator do
   let(:sequence_generator) { mock("sequence_generator") }
-  let(:even_picker) { mock("EvenPicker") }
+  let(:even_picker) { mock(EvenPicker) }
   let(:even_summator) { EvenSummator.new(sequence_generator) }
   
   describe "sum" do
