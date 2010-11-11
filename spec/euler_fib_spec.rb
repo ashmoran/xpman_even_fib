@@ -26,7 +26,13 @@ class EvenPicker
 end
 
 class FibSequenceGenerator
+  def initialize(limit)
+    
+  end
   
+  def sequence
+    [1]
+  end
 end
 
 class EvenFibSummator
