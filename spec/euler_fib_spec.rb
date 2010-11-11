@@ -14,7 +14,13 @@ class Summator
 end
 
 class EvenPicker
+  def initialize(sequence_generator)
+    @sequence_generator = sequence_generator
+  end
   
+  def sequence
+    @sequence_generator.sequence.select { |e| e.even? }
+  end
 end
 
 class EvenSummator
