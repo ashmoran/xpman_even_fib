@@ -13,6 +13,16 @@ class Summator
   end
 end
 
+class EvenSummator
+  def initialize(sequence_generator)
+    @sequence_generator = sequence_generator
+  end
+  
+  def sum
+    
+  end
+end
+
 describe "even fib sum" do
   let(:sequence_generator) { mock("sequence_generator", sequence: [1,2,3]) }
   
