@@ -16,10 +16,12 @@ end
 class EvenFibSummator
   def sum
     Summator.new(EvenPicker.new(FibSequenceGenerator.new))
+    1
   end
 end
 
 describe EvenFibSummator do
+  
   let(:even_picker) { mock(EvenPicker) }
   let(:fib_sequence_generator) { mock(FibSequenceGenerator) }
   let(:even_fib_summator) { EvenFibSummator.new }
