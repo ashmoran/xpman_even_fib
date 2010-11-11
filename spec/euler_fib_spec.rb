@@ -43,4 +43,8 @@ describe EvenFibSummator do
     Summator.should_receive(:new).with(even_picker)
     even_fib_summator.sum
   end
+  
+  it "asks the Summator for the sum" do
+    even_fib_summator.sum.should eq 1
+  end
 end
