@@ -10,4 +10,5 @@ end
 describe "euler_fib" do
   specify { even_fib_sum(1).should eq 0 }
   specify { even_fib_sum(2).should eq 0 }
+  specify { even_fib_sum(3).should eq 0 }
 end
