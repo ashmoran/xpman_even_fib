@@ -43,7 +43,7 @@ describe EvenSummator do
   let(:even_summator) { EvenSummator.new(sequence_generator) }
   
   before(:each) do
-    # EvenPicker.
+    EvenPicker.stub(new: even_picker)
   end
   
   specify "sum" do
