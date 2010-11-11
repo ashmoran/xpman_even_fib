@@ -21,7 +21,7 @@ class EvenFibSummator
 end
 
 describe EvenFibSummator do
-  
+  let(:summator) { mock(Summator, sum: 1) }
   let(:even_picker) { mock(EvenPicker) }
   let(:fib_sequence_generator) { mock(FibSequenceGenerator) }
   let(:even_fib_summator) { EvenFibSummator.new }
