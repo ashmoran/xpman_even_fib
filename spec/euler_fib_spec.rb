@@ -6,7 +6,9 @@ class FibSequenceGenerator
 end
 
 class EvenFibSummator
-  
+  def sum
+    
+  end
 end
 
 describe EvenFibSummator do
