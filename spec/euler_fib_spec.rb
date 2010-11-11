@@ -72,3 +72,7 @@ describe EvenSummator do
     even_summator.sum
   end
 end
+
+describe EvenFibSummator do
+  
+end
