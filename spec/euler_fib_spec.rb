@@ -39,6 +39,10 @@ class EvenFibSummator
   end
 end
 
+describe FibSequenceGenerator do
+  specify { FibSequenceGenerator.new(1).should eq [1] }
+end
+
 describe EvenPicker do
   let(:sequence_generator) { mock("SequenceGenerator", sequence: [1,2,3,4,5,6,7,8])}
   let(:even_picker) { EvenPicker.new(sequence_generator) }
