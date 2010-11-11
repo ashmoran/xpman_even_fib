@@ -1,3 +1,5 @@
+# NOTE: This bit done in Paul Barrett's car on the way back to Stoke
+
 require 'spec_helper'
 require 'euler_fib'
 
