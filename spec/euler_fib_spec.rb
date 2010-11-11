@@ -19,6 +19,15 @@ class EvenFibSummator
   end
 end
 
+describe Summator do
+  let(:sequence_generator) { mock("SequenceGenerator", sequence: [1,2,3])}
+  let(:summator) { Summator.new(sequence_generator) }
+  
+  it "sums numbers" do
+    summator.sum.should eq 6
+  end
+end
+
 describe EvenFibSummator do
   let(:summator) { mock(Summator, sum: 1) }
   let(:even_picker) { mock(EvenPicker) }
