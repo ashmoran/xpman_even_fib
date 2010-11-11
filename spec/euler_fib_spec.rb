@@ -28,6 +28,7 @@ describe EvenFibSummator do
   before(:each) {
     FibSequenceGenerator.stub(new: fib_sequence_generator)
     EvenPicker.stub(new: even_picker)
+    Summator.stub(new: summator)
   }
 
   it "creates a FibSequenceGenerator" do
