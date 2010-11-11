@@ -15,8 +15,7 @@ end
 
 class EvenFibSummator
   def sum
-    Summator.new(EvenPicker.new(FibSequenceGenerator.new))
-    1
+    Summator.new(EvenPicker.new(FibSequenceGenerator.new)).sum
   end
 end
 
