@@ -9,7 +9,7 @@ class Summer
   end
   
   def sum
-    sequence_generator.sequence.sum
+    sequence_generator.sequence.inject(:+)
   end
 end
 
