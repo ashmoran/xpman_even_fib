@@ -7,7 +7,7 @@ end
 
 class EvenFibSummator
   def sum
-    
+    FibSequenceGenerator.new
   end
 end
 
