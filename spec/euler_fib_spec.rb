@@ -1,6 +1,10 @@
 require 'spec_helper'
 require 'euler_fib'
 
+class Summator
+  
+end
+
 class EvenPicker
   
 end
@@ -16,6 +20,7 @@ class EvenFibSummator
 end
 
 describe EvenFibSummator do
+  let(:even_picker) { mock(EvenPicker) }
   let(:fib_sequence_generator) { mock(FibSequenceGenerator) }
   let(:even_fib_summator) { EvenFibSummator.new }
   
@@ -28,6 +33,11 @@ describe EvenFibSummator do
   
   it "creates a EvenPicker with the FibSequenceGenerator" do
     EvenPicker.should_receive(:new).with(fib_sequence_generator)
+    even_fib_summator.sum
+  end
+  
+  it "creates a Summator with the EvenPicker" do
+    Summator.should_receive(:new).with(even_picker)
     even_fib_summator.sum
   end
 end
