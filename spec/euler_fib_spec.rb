@@ -47,6 +47,7 @@ describe EvenFibSummator do
   end
   
   it "asks the Summator for the sum" do
+    summator.should_receive(:sum)
     even_fib_summator.sum.should eq 1
   end
 end
