@@ -5,6 +5,8 @@ require 'euler_fib'
 
 def even_fib_sum(n)
   
+  return 0;
+  
 end
 
 describe "euler_fib" do
