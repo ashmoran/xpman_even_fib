@@ -71,6 +71,8 @@ describe EvenFibSummator do
   end
   
   describe "integration" do
-    EvenFibSummator.new(35).sum.should eq 44
+    it "works" do
+      EvenFibSummator.new(35).sum.should eq 44
+    end
   end
 end
