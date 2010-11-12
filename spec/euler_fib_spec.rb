@@ -22,6 +22,7 @@ contract "SequenceGenerator" do
   its(:sequence) { should be_an Array }
   
   it "contains at least one element" do
+    # Sanity check more than anything
     subject.sequence.should have_at_least(1).elements
   end
 
@@ -53,6 +54,8 @@ describe LimitedSequenceGenerator do
   context "with a limit that is NOT present in the sequence" do
     subject { LimitedSequenceGenerator.new(incremental_sequence_generator, 9) }
     
+    it_satisfies_contract "SequenceGenerator"
+    
     it "collects values until one value is returned that is >= than limit" do
       subject.sequence.should eq [1, 4, 3, 8]
     end
@@ -65,6 +68,8 @@ describe EvenPicker do
       mock("SequenceGenerator", sequence: [1, 2, 3, 4, 5, 6, 7, 8])
     )
   }
+  
+  it_satisfies_contract "SequenceGenerator"
   
   its(:sequence) { should eq [2,4,6,8] }
 end
