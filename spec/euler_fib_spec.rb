@@ -48,14 +48,8 @@ describe EvenPicker do
 end
 
 describe Summator do
-  let(:sequence_generator) { mock("SequenceGenerator", sequence: [1,2,3])}
-  subject { Summator.new(sequence_generator) }
-  
+  subject { Summator.new(mock("SequenceGenerator", sequence: [1, 2, 3])) }  
   its(:sum) { should eq 6 }
-  
-  # it "sums numbers" do
-  #   summator.sum.should eq 6
-  # end
 end
 
 describe EvenFibSummator do
