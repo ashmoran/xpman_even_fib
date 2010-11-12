@@ -69,6 +69,10 @@ describe IncrementalFibSequenceGenerator do
   specify { fib(4).should eq 3 }
 end
 
+# I added the contract last as half way through coding I realised
+# I'd given the EvenPicker the wrong interface. Because I'd neglected
+# the integration example now at the top of the file, I didn't notice
+# this immediately.
 contract "SequenceGenerator" do
   its(:sequence) { should be_an Array }
   
