@@ -39,6 +39,7 @@ describe LimitedSequenceGenerator do
     it "collects values until one value is returned that is greater than limit" do
       subject.sequence.should eq [1, 4, 3, 8]
     end
+    its(:sequence) { should eq [1, 4, 3] }
   end
 end
 
