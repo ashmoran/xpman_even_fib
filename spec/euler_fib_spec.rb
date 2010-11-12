@@ -62,7 +62,6 @@ end
 
 describe EvenFibSummator do
   it "works" do
-    pending "Infinite loop at the moment"
     EvenFibSummator.new(35).sum.should eq 44
   end
 end
