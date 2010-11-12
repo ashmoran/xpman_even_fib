@@ -9,9 +9,11 @@ describe IncrementalFibSequenceGenerator do
   let(:incremental_sequence_generator) { IncrementalFibSequenceGenerator.new }
   
   def fib(n)
+    fib = nil
     n.times do
-      incremental_sequence_generator.next
+      fib = incremental_sequence_generator.next
     end
+    fib
   end
   
   it "generates the Fibonacci sequence" do
