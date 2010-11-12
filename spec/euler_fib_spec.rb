@@ -31,6 +31,8 @@ describe LimitedSequenceGenerator do
   
   context "with a limit that is present in the sequence" do
     subject { LimitedSequenceGenerator.new(incremental_sequence_generator, 8) }
+    
+    it_satisfies_contract "SequenceGenerator"
 
     it "collects values until one value is returned that is >= than limit" do
       subject.sequence.should eq [1, 4, 3]
