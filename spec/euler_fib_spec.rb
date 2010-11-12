@@ -96,7 +96,7 @@ describe EvenFibSummator do
   end
   
   it "creates a LimitedSequenceGenerator with the limit" do
-    LimitedSequenceCreator.should_receive(:new).with(2)
+    LimitedSequenceGenerator.should_receive(:new).with(2)
     even_fib_summator.sum
   end
   
