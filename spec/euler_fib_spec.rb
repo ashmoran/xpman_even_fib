@@ -103,7 +103,7 @@ describe EvenFibSummator do
   end
   
   it "creates a EvenPicker with the FibSequenceGenerator" do
-    EvenPicker.should_receive(:new).with(fib_sequence_generator)
+    EvenPicker.should_receive(:new).with(limited_sequence_generator)
     even_fib_summator.sum
   end
   
