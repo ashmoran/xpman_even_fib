@@ -35,7 +35,7 @@ end
 
 class IncrementalFibSequenceGenerator
   def next
-    2
+    1
   end
 end
 
