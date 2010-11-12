@@ -25,16 +25,16 @@ describe LimitedSequenceGenerator do
     isq
   }
   
-  it "collects all if none are >= the limit" do
-    # Actually, we will assume IncrementalSequenceGenerator#next produces an infinite sequence
+  context "with a limit that is present in the sequence" do
+    it "collects values until one value is returned that is equal the limit" do
+      LimitedSequenceGenerator.new(incremental_sequence_generator, 8).sequence.should eq [1, 4, 3]
+    end    
   end
   
-  it "collects values until one value is returned that is equal the limit" do
-    LimitedSequenceGenerator.new(incremental_sequence_generator, 8).sequence.should eq [1, 4, 3]
-  end
-  
-  it "collects values until one value is returned that is greater than limit" do
-    LimitedSequenceGenerator.new(incremental_sequence_generator, 9).sequence.should eq [1, 4, 3, 8]
+  context "with a limit that is NOT present in the sequence" do
+    it "collects values until one value is returned that is greater than limit" do
+      LimitedSequenceGenerator.new(incremental_sequence_generator, 9).sequence.should eq [1, 4, 3, 8]
+    end
   end
 end
 
