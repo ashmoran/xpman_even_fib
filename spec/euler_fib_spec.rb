@@ -8,7 +8,7 @@ describe EvenFibSummator do
   
   it "works for 4 000 000" do
     # Although I did actually use the EvenFibSummator to generate the answer :)
-    EvenFibSummator.new(4_000_000).sum.should eq 4613732
+    EvenFibSummator.new(4_000_000).sum.should eq 4_613_732
   end
 end
 
