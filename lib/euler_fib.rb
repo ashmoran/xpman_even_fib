@@ -25,7 +25,11 @@ class LimitedSequenceGenerator
   end
   
   def sequence
-    [ ]
+    seq = [ ]
+    while (next_value = @incremental_sequence_generator.next) != @limit
+      seq << next_value
+    end
+    seq
   end
 end
 
