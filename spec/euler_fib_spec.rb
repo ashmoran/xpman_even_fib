@@ -49,8 +49,9 @@ describe EvenFibSummator do
   it "asks the Summator for the sum" do
     summator.should_receive(:sum)
     even_fib_summator.sum.should eq 1
-  end  
+  end
 end
+
 describe IncrementalFibSequenceGenerator do
   let(:incremental_sequence_generator) { IncrementalFibSequenceGenerator.new }
   
