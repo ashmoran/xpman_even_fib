@@ -30,7 +30,7 @@ describe LimitedSequenceGenerator do
     it "does something" do
       subject.sequence.should eq [1, 4, 3]
     end
-    its(:sequence) { should eq [1, 4, 3] }
+    # its(:sequence) { should eq [1, 4, 3] }
   end
   
   context "with a limit that is NOT present in the sequence" do
