@@ -49,6 +49,6 @@ class EvenFibSummator
   end
   
   def sum
-    Summator.new(EvenPicker.new(LimitedSequenceGenerator.new(Incremental.new, @limit))).sum
+    Summator.new(EvenPicker.new(LimitedSequenceGenerator.new(IncrementalFibSequenceGenerator.new, @limit))).sum
   end
 end
