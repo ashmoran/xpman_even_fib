@@ -19,13 +19,13 @@ describe IncrementalFibSequenceGenerator do
 end
 
 describe LimitedSequenceGenerator do
-  let(:incremental_sequence_generator) {
-    mock("IncrementalSequenceGenerator").tap do |isq|
-      isq.stub(:next).and_return(1, 4, 3, 8, 12)
-    end
-  }
-  
   context "with a limit that is present in the sequence" do
+    let(:incremental_sequence_generator) {
+      mock("IncrementalSequenceGenerator").tap do |isq|
+        isq.stub(:next).and_return(1, 4, 3, 8, 12)
+      end
+    }
+  
     subject { LimitedSequenceGenerator.new(incremental_sequence_generator, 8) }
     its(:sequence) { should eq [1, 4, 3] }
   end
