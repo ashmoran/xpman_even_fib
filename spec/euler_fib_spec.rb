@@ -22,7 +22,7 @@ contract "SequenceGenerator" do
   its(:sequence) { should be_an Array }
 
   it "contains integers" do
-    subject.sequence.all? { |element| element.is_an?(Integer) }
+    subject.sequence.all? { |element| element.is_a?(Integer) }
   end
 end
 
