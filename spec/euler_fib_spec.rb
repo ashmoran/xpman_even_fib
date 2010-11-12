@@ -20,9 +20,9 @@ end
 
 describe LimitedSequenceGenerator do
   let(:incremental_sequence_generator) {
-    isq = mock("IncrementalSequenceGenerator")
-    isq.stub(:next).and_return(1, 4, 3, 8, 12)
-    isq
+    isq = mock("IncrementalSequenceGenerator").stub(:next).and_return(1, 4, 3, 8, 12)
+    # isq
+    # isq
   }
   
   context "with a limit that is present in the sequence" do
