@@ -18,7 +18,7 @@ describe LimitedSequenceGenerator do
   }
   
   it "collects values until one value is returned that is equal the limit" do
-    LimitedSequenceGenerator.new(incremental_sequence_generator, 8).generate.should eq [1, 4, 3]
+    LimitedSequenceGenerator.new(incremental_sequence_generator, 8).sequence.should eq [1, 4, 3]
   end
 end
 
