@@ -19,7 +19,14 @@ class EvenPicker
 end
 
 class LimitedSequenceGenerator
+  def initialize(incremental_sequence_generator, limit)
+    @incremental_sequence_generator = incremental_sequence_generator
+    @limit = limit
+  end
   
+  def generate
+    [ ]
+  end
 end
 
 class FibSequenceGenerator
