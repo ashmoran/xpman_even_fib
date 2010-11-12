@@ -81,11 +81,13 @@ end
 describe EvenFibSummator do
   let(:summator) { mock(Summator, sum: 1) }
   let(:even_picker) { mock(EvenPicker) }
+  let(:limited_sequence_generator) { mock(LimitedSequenceGenerator) }
   let(:fib_sequence_generator) { mock(FibSequenceGenerator) }
   let(:even_fib_summator) { EvenFibSummator.new(2) }
   
   before(:each) {
     FibSequenceGenerator.stub(new: fib_sequence_generator)
+    LimitedSequenceGenerator.stub(new: limited_sequence_generator)
     EvenPicker.stub(new: even_picker)
     Summator.stub(new: summator)
   }
