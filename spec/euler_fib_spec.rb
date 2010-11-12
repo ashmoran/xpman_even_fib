@@ -20,6 +20,10 @@ end
 
 contract "SequenceGenerator" do
   its(:sequence) { should be_an Array }
+  
+  it "contains at least one element" do
+    subject.sequence.should have_at_least(1).elements
+  end
 
   it "contains integers" do
     subject.sequence.all? { |element| element.is_a?(Integer) }
