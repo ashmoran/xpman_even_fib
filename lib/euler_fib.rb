@@ -33,7 +33,7 @@ class LimitedSequenceGenerator
   end
 end
 
-class IncrementalFibSeqenceGenerator
+class IncrementalFibSequenceGenerator
   def initialize
     
   end
