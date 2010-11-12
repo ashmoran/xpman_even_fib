@@ -1,9 +1,5 @@
-# NOTE: This bit done in Paul Barrett's car on the way back to Stoke
-
 require 'spec_helper'
 require 'euler_fib'
-
-# 1 1 2 3 5 8 13 21 34 55 89 
 
 describe IncrementalFibSequenceGenerator do
   let(:incremental_sequence_generator) { IncrementalFibSequenceGenerator.new }
@@ -53,11 +49,13 @@ end
 
 describe Summator do
   let(:sequence_generator) { mock("SequenceGenerator", sequence: [1,2,3])}
-  let(:summator) { Summator.new(sequence_generator) }
+  subject { Summator.new(sequence_generator) }
   
-  it "sums numbers" do
-    summator.sum.should eq 6
-  end
+  its(:sum) { should eq 6 }
+  
+  # it "sums numbers" do
+  #   summator.sum.should eq 6
+  # end
 end
 
 describe EvenFibSummator do
