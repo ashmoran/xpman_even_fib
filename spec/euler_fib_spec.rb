@@ -17,6 +17,7 @@ describe IncrementalFibSequenceGenerator do
   end
   
   specify { fib(1).should eq 1 }
+  specify { fib(2).should eq 1 }
 end
 
 describe LimitedSequenceGenerator do
