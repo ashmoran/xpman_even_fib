@@ -18,6 +18,10 @@ describe IncrementalFibSequenceGenerator do
   specify { fib(4).should eq 3 }
 end
 
+contract "SequenceGenerator" do
+  its(:sequence) { should be_an Array }
+end
+
 describe LimitedSequenceGenerator do
   let(:incremental_sequence_generator) {
     mock("IncrementalSequenceGenerator").tap do |isq|
