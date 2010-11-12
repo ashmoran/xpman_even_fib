@@ -39,14 +39,13 @@ describe LimitedSequenceGenerator do
 end
 
 describe EvenPicker do
-  let(:sequence_generator) { mock("SequenceGenerator", sequence: [1,2,3,4,5,6,7,8])}
-  let(:subject) { EvenPicker.new(sequence_generator) }
+  let(:subject) {
+    EvenPicker.new(
+      mock("SequenceGenerator", sequence: [1, 2, 3, 4, 5, 6, 7, 8])
+    )
+  }
   
   its(:sequence) { should eq [2,4,6,8] }
-  
-  # it "picks even numbers" do
-  #   even_picker.sequence.should eq [2,4,6,8]
-  # end
 end
 
 describe Summator do
