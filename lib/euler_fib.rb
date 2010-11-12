@@ -44,7 +44,7 @@ class IncrementalFibSequenceGenerator
     if @count == 1 or @count == 2
       @fib_sequence[@count - 1]
     else
-      2
+      @fib_sequence[@count - 1] + @fib_sequence[@count - 2]
     end
   end
 end
