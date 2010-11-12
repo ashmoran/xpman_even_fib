@@ -6,8 +6,17 @@ require 'euler_fib'
 # 1 1 2 3 5 8 13 21 34 55 89 
 
 describe IncrementalFibSequenceGenerator do
-  specify { pending; IncrementalFibSequenceGenerator.new(1).sequence.should eq [1] }
-  specify { pending; IncrementalFibSequenceGenerator.new(2).sequence.should eq [1, 1] }
+  let(:incremental_sequence_generator) { IncrementalFibSequenceGenerator.new }
+  
+  def fib(n)
+    n.times do
+      incremental_sequence_generator.next
+    end
+  end
+  
+  it "generates the Fibonacci sequence" do
+    fib(1).should eq 1
+  end
 end
 
 describe LimitedSequenceGenerator do
