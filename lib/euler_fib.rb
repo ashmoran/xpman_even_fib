@@ -42,7 +42,7 @@ class IncrementalFibSequenceGenerator
   def next
     @count += 1
     if @count == 1 or @count == 2
-      @fib_sequence[@count]
+      @fib_sequence[@count - 1]
     else
       2
     end
