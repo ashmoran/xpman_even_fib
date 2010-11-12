@@ -5,9 +5,9 @@ require 'euler_fib'
 
 # 1 1 2 3 5 8 13 21 34 55 89 
 
-describe FibSequenceGenerator do
-  specify { pending; FibSequenceGenerator.new(1).sequence.should eq [1] }
-  specify { pending; FibSequenceGenerator.new(2).sequence.should eq [1, 1] }
+describe Incremental do
+  specify { pending; Incremental.new(1).sequence.should eq [1] }
+  specify { pending; Incremental.new(2).sequence.should eq [1, 1] }
 end
 
 describe LimitedSequenceGenerator do
@@ -58,27 +58,27 @@ describe EvenFibSummator do
   let(:summator) { mock(Summator, sum: 1) }
   let(:even_picker) { mock(EvenPicker) }
   let(:limited_sequence_generator) { mock(LimitedSequenceGenerator) }
-  let(:fib_sequence_generator) { mock(FibSequenceGenerator) }
+  let(:incremental_fib_sequence_generator) { mock(Incremental) }
   let(:even_fib_summator) { EvenFibSummator.new(2) }
   
   before(:each) {
-    FibSequenceGenerator.stub(new: fib_sequence_generator)
+    IncrementalIncremental.stub(new: incremental_fib_sequence_generator)
     LimitedSequenceGenerator.stub(new: limited_sequence_generator)
     EvenPicker.stub(new: even_picker)
     Summator.stub(new: summator)
   }
 
-  it "creates a FibSequenceGenerator" do
-    FibSequenceGenerator.should_receive(:new)
+  it "creates a Incremental" do
+    Incremental.should_receive(:new)
     even_fib_summator.sum
   end
   
-  it "creates a LimitedSequenceGenerator with the FibSequenceGenerator and the limit" do
-    LimitedSequenceGenerator.should_receive(:new).with(fib_sequence_generator, 2)
+  it "creates a LimitedSequenceGenerator with the Incremental and the limit" do
+    LimitedSequenceGenerator.should_receive(:new).with(incremental_fib_sequence_generator, 2)
     even_fib_summator.sum
   end
   
-  it "creates a EvenPicker with the FibSequenceGenerator" do
+  it "creates a EvenPicker with the Incremental" do
     EvenPicker.should_receive(:new).with(limited_sequence_generator)
     even_fib_summator.sum
   end
