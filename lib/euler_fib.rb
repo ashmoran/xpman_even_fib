@@ -34,12 +34,8 @@ class LimitedSequenceGenerator
 end
 
 class IncrementalFibSequenceGenerator
-  def initialize
-    
-  end
-  
-  def sequence
-    [1]
+  def next
+    2
   end
 end
 
