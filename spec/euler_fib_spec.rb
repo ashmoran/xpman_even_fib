@@ -64,6 +64,10 @@ describe EvenFibSummator do
   it "works" do
     EvenFibSummator.new(35).sum.should eq 44
   end
+  
+  it "works for 4 000 000" do
+    EvenFibSummator.new(4_000_000).sum.should eq 0
+  end
 end
 
 describe EvenFibSummator do
