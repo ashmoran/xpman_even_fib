@@ -17,6 +17,10 @@ describe LimitedSequenceGenerator do
     isq
   }
   
+  it "collects all if none are >= the limit" do
+    LimitedSequenceGenerator.new(incremental_sequence_generator, 13).sequence.should eq [1, 4, 3, 8, 12]
+  end
+  
   it "collects values until one value is returned that is equal the limit" do
     LimitedSequenceGenerator.new(incremental_sequence_generator, 8).sequence.should eq [1, 4, 3]
   end
