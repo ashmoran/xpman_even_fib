@@ -30,7 +30,7 @@ class LimitedSequenceGenerator
 end
 
 class FibSequenceGenerator
-  def initialize(limit)
+  def initialize
     
   end
   
