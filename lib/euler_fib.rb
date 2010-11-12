@@ -43,9 +43,16 @@ class IncrementalFibSequenceGenerator
     @count += 1
     if @count == 1 or @count == 2
       @fib_sequence[@count - 1]
+      fib(@count)
     else
       @fib_sequence[@count - 2] + @fib_sequence[@count - 3]
     end
+  end
+  
+  private
+  
+  def fib(number)
+    @fib_sequence[number - 1]
   end
 end
 
