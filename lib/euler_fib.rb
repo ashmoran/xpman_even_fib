@@ -24,7 +24,7 @@ class LimitedSequenceGenerator
     @limit = limit
   end
   
-  def generate
+  def sequence
     [ ]
   end
 end
