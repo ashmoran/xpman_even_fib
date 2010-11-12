@@ -25,7 +25,7 @@ describe LimitedSequenceGenerator do
     end
   }
   
-  context "with a limit that is present in the sequence" do
+  describe "with a limit that is present in the sequence" do
     subject { LimitedSequenceGenerator.new(incremental_sequence_generator, 8) }
     its(:sequence) { should eq [1, 4, 3] }
   end
