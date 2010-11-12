@@ -21,7 +21,8 @@ end
 describe LimitedSequenceGenerator do
   let(:incremental_sequence_generator) {
     mock("IncrementalSequenceGenerator").tap do |isq|
-      isq.stub(:next).and_return(1, 4, 3, 8, 12)
+      # isq.stub(:next).and_return(1, 4, 3, 8, 12)
+      isq.stub(:next).and_raise
     end
   }
   
