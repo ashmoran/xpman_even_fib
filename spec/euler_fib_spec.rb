@@ -10,6 +10,18 @@ describe FibSequenceGenerator do
   specify { pending; FibSequenceGenerator.new(2).sequence.should eq [1, 1] }
 end
 
+describe LimitedSequenceGenerator do
+  let(:incremental_sequence_generator) {
+    isq = mock("IncrementalSequenceGenerator")
+    isq.stub(:next).and_return(1, 4, 3, 8, 12)
+    isq
+  }
+  
+  it "collects values until one value is returned that is equal the limit" do
+    LimitedSequenceGenerator.new(incremental_sequence_generator, 8).should eq [1, 4, 3]
+  end
+end
+
 describe EvenPicker do
   let(:sequence_generator) { mock("SequenceGenerator", sequence: [1,2,3,4,5,6,7,8])}
   let(:even_picker) { EvenPicker.new(sequence_generator) }
