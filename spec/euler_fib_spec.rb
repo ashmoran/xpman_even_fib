@@ -16,9 +16,7 @@ describe IncrementalFibSequenceGenerator do
     fib
   end
   
-  it "generates the Fibonacci sequence" do
-    fib(1).should eq 1
-  end
+  specify { fib(1).should eq 1 }
 end
 
 describe LimitedSequenceGenerator do
