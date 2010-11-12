@@ -41,8 +41,12 @@ class IncrementalFibSequenceGenerator
   
   def next
     @count += 1
-    @fib_sequence << (fib(@count - 1) + fib(@count - 2))
-    @fib_sequence.last
+    if @count <= 2
+      fib(@count)
+    else
+      @fib_sequence << (fib(@count - 1) + fib(@count - 2))
+      @fib_sequence.last
+    end
   end
   
   private
