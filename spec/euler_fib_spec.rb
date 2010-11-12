@@ -24,6 +24,10 @@ describe LimitedSequenceGenerator do
   it "collects values until one value is returned that is equal the limit" do
     LimitedSequenceGenerator.new(incremental_sequence_generator, 8).sequence.should eq [1, 4, 3]
   end
+  
+  it "collects values until one value is returned that is greater than limit" do
+    LimitedSequenceGenerator.new(incremental_sequence_generator, 9).sequence.should eq [1, 4, 3, 8]
+  end
 end
 
 describe EvenPicker do
