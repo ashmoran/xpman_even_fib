@@ -87,7 +87,7 @@ describe EvenFibSummator do
   }
 
   it "creates a FibSequenceGenerator" do
-    FibSequenceGenerator.should_receive(:new).with(2)
+    FibSequenceGenerator.should_receive(:new)
     even_fib_summator.sum
   end
   
