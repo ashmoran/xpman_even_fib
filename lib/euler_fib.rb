@@ -44,7 +44,8 @@ class IncrementalFibSequenceGenerator
     if @count == 1 or @count == 2
       fib(@count)
     else
-      @fib_sequence.concat(fib(@count - 1) + fib(@count - 2))
+      @fib_sequence << (fib(@count - 1) + fib(@count - 2))
+      @fib_sequence.last
     end
   end
   
