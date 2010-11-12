@@ -47,6 +47,7 @@ end
 
 describe FibSequenceGenerator do
   specify { FibSequenceGenerator.new(1).sequence.should eq [1] }
+  specify { FibSequenceGenerator.new(2).sequence.should eq [1, 1] }
 end
 
 describe EvenPicker do
