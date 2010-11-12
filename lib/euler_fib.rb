@@ -34,8 +34,12 @@ class LimitedSequenceGenerator
 end
 
 class IncrementalFibSequenceGenerator
+  def initialize
+    @count = 0
+  end
+  
   def next
-    1
+    @count += 1
   end
 end
 
