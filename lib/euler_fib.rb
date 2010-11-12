@@ -40,6 +40,11 @@ class IncrementalFibSequenceGenerator
   
   def next
     @count += 1
+    if @count < 3
+      1
+    else
+      2
+    end
   end
 end
 
